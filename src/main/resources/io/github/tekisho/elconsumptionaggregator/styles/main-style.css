@@ -1,9 +1,13 @@
-* {
-    -fx-font-family: "Segoe UI";
-}
+/*@font-face {*/
+/*    font-family: Figtree;*/
+/*    src: url('../fonts/Figtree-Medium.ttf');*/
+/*}*/
 
-#root {
-    -fx-background-color: rgb(35, 35, 35);
+.root {
+    /*-fx-font-family: "Figtree";*/
+    -fx-font-size: 12;
+    -fx-font-weight: 400;
+    -fx-background-color: rgb(38, 38, 38);
 }
 
 /* Remove the indentation at the top when pressing */
@@ -30,7 +34,7 @@
     -fx-text-fill: rgb(150, 150, 150);
 }
 #help-button:hover {
-    -fx-background-color: rgb(50, 75, 100);
+    -fx-background-color: rgb(75, 75, 100);
     -fx-cursor: hand;
 }
 
@@ -45,14 +49,19 @@
     -fx-wrap-text: true;
     -fx-text-fill: rgb(150, 150, 150);
     -fx-prompt-text-fill: rgb(150, 150, 150);
-    -fx-background-color: transparent;
+
+    -fx-background-color: rgb(75, 75, 75);
+
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 #info-field .content {
     -fx-background-radius: 0;
     -fx-background-color: rgb(50, 50, 50);
     -fx-padding: 10, 5, 10, 5;
-    -fx-border-width: 1;
-    -fx-border-color: rgb(75, 75, 75);
+}
+#info-field:hover {
+    -fx-background-color: rgb(100, 100, 100);
 }
 #info-field .scroll-bar:vertical {
     -fx-pref-width: 15;

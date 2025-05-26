@@ -1,6 +1,8 @@
 module io.github.tekisho.elconsumptionaggregator {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.apache.poi.ooxml;
+    requires java.desktop;
 
 
     opens io.github.tekisho.elconsumptionaggregator to javafx.fxml;

@@ -61,24 +61,30 @@ public class ExcelParserService {
         return days;
     }
 
-    // TODO
+    // TODO implement proper file format validation
     private void validateFormat(Row headerRow) {
-        // 1 - time intervals
         List<LocalTime> expectedSlots = timeSlots.getSlots();
         for (int colIndex = 1; colIndex < headerRow.getLastCellNum(); colIndex++) {
-            String timeStr = headerRow.getCell(colIndex).getStringCellValue();
-            LocalTime time = LocalTime.parse(timeStr);
 
-            if (!expectedSlots.contains(time)) {
-                throw new RuntimeException("Wrong time interval: " + timeStr);
-            }
         }
+
+
+        // 1 - time intervals
+//        List<LocalTime> expectedSlots = timeSlots.getSlots();
+//        for (int colIndex = 1; colIndex < headerRow.getLastCellNum(); colIndex++) {
+//            String timeStr = headerRow.getCell(colIndex).getStringCellValue();
+//            LocalTime time = LocalTime.parse(timeStr);
+//
+//            if (!expectedSlots.contains(time)) {
+//                throw new RuntimeException("Wrong time interval: " + timeStr);
+//            }
+//        }
 
         // 2 - all consumption rows should be in expected format
-        for (int rowIndex = 1; rowIndex < headerRow.getLastCellNum(); rowIndex++) {
-            for (int colIndex = 0; colIndex < headerRow.getLastCellNum(); colIndex++) {
-                // TODO
-            }
-        }
+//        for (int rowIndex = 1; rowIndex < headerRow.getLastCellNum(); rowIndex++) {
+//            for (int colIndex = 0; colIndex < headerRow.getLastCellNum(); colIndex++) {
+//                // TODO
+//            }
+//        }
     }
 }

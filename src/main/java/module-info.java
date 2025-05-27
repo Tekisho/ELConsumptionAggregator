@@ -9,4 +9,6 @@ module io.github.tekisho.elconsumptionaggregator {
     exports io.github.tekisho.elconsumptionaggregator;
     exports io.github.tekisho.elconsumptionaggregator.controller;
     opens io.github.tekisho.elconsumptionaggregator.controller to javafx.fxml;
+
+    exports io.github.tekisho.elconsumptionaggregator.model to io.github.tekisho.elconsumptionaggregator.tests;
 }

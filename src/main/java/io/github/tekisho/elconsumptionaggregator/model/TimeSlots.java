@@ -7,7 +7,8 @@ import java.util.List;
 
 public final class TimeSlots {
     public static final int SLOT_STEP_MINUTES = 15;
-    public static final int SLOTS_PER_DAY = (24 * 60) / SLOT_STEP_MINUTES;
+    private static final int TOTAL_DAY_SLOTS = (24 * 60);
+    public static final int SLOTS_PER_DAY = TOTAL_DAY_SLOTS / SLOT_STEP_MINUTES;
     private final List<LocalTime> slots;
 
     public TimeSlots() {

@@ -1,0 +1,4 @@
+jlink `
+  --module-path "$env:JAVA_HOME\jmods;C:\Work_Programs\JavaFX\javafx-jmods-21.0.7" `
+  --add-modules java.base,java.desktop,java.logging,javafx.controls,javafx.fxml `
+  --output jpackage/runtime

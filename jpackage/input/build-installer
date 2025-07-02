@@ -1,0 +1,18 @@
+jpackage `
+  --type msi `
+  --input jpackage/input `
+  --name ELConsumptionAggregator `
+  --description "A lightweight JavaFX utility for parsing Excel files (.xls/.xlsx) of a specific format to calculate and export average hourly power consumption per day." `
+  --main-jar elconsumptionaggregator-1.0-SNAPSHOT.jar `
+  --main-class io.github.tekisho.elconsumptionaggregator.ELConsumptionAggregator `
+  --icon jpackage/resources/app-icon.ico `
+  --java-options "-DLOG_DIR=./logs" `
+  --dest jpackage/output `
+  --runtime-image jpackage/runtime `
+  --copyright "© 2025 Tekisho" `
+  --license-file jpackage/resources/LICENSE.txt `
+  --win-shortcut-prompt `
+  --win-menu `
+  --win-dir-chooser `
+  --app-version 1.0.0 `
+  --vendor "Tekisho"

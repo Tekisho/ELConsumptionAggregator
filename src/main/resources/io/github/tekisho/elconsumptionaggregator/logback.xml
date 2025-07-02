@@ -1,0 +1,41 @@
+<configuration>
+    <property name="LOG_DIR" value="./logs"/>
+
+    <!-- Console Appender -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Rolling File Appender -->
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- current .log file -->
+        <file>${LOG_DIR}/current.log</file>
+
+        <!-- rolling policy -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- pattern for archived .log files -->
+            <fileNamePattern>${LOG_DIR}/archived/log.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+
+            <!-- max file size -->
+            <maxFileSize>50MB</maxFileSize>
+
+            <!-- keep 7 days -->
+            <maxHistory>7</maxHistory>
+
+            <!-- total file size -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ROLLING"/>
+    </root>
+</configuration>

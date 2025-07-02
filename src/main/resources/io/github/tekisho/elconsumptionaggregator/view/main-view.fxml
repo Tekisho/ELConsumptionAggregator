@@ -3,64 +3,51 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="375.0" minWidth="325.0" stylesheets="@../styles/main-style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.tekisho.elconsumptionaggregator.controller.MainController">
-   <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <bottom>
-            <Button id="help-button" fx:id="helpBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleHelp" prefHeight="25.0" prefWidth="25.0" text="?" BorderPane.alignment="TOP_LEFT">
-               <BorderPane.margin>
-                  <Insets top="25.0" />
-               </BorderPane.margin>
-            </Button>
-         </bottom>
-         <center>
-            <VBox alignment="TOP_CENTER" spacing="25.0" BorderPane.alignment="CENTER">
+<BorderPane id="main-window" maxHeight="175.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="325.0" stylesheets="@../styles/main-style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.tekisho.elconsumptionaggregator.controller.MainController">
+   <bottom>
+      <Button id="help-button" fx:id="aboutApplicationButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="?" BorderPane.alignment="TOP_LEFT">
+         <BorderPane.margin>
+            <Insets top="25.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <top>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="25.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="25.0" styleClass="grid-pane" VBox.vgrow="NEVER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <GridPane hgap="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="25.0" styleClass="grid-pane" VBox.vgrow="NEVER">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Button fx:id="selectBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" onMouseClicked="#handleSelect" prefHeight="25.0" styleClass="control-button" text="Select Excel File">
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin></Button>
-                        <Button fx:id="saveBtn" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" onMouseClicked="#handleSave" prefHeight="25.0" styleClass="control-button" text="Save Result" GridPane.columnIndex="1" />
-                     </children>
-                     <VBox.margin>
+                  <Button fx:id="importFileButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" styleClass="control-button" text="Select Excel File">
+                     <GridPane.margin>
                         <Insets />
-                     </VBox.margin>
-                  </GridPane>
-                  <Label id="status-label" fx:id="statusLabel" alignment="CENTER" contentDisplay="TEXT_ONLY" text="PROCESSING STATUS" textAlignment="CENTER" wrapText="true" />
-                  <TextArea id="info-field" fx:id="detailsArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Console Details" VBox.vgrow="ALWAYS">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </TextArea>
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="exportFileButton" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" styleClass="control-button" text="Save Result" GridPane.columnIndex="1" />
                </children>
-               <BorderPane.margin>
+               <VBox.margin>
                   <Insets />
-               </BorderPane.margin>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </VBox>
-         </center>
-      </BorderPane>
-   </children>
-   <padding>
-      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-   </padding>
-</AnchorPane>
+               </VBox.margin>
+            </GridPane>
+            <Label id="status-label" fx:id="statusLabel" alignment="CENTER" contentDisplay="TEXT_ONLY" managed="false" maxHeight="-Infinity" prefHeight="25.0" textAlignment="CENTER" visible="false" wrapText="true" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </top>
+</BorderPane>

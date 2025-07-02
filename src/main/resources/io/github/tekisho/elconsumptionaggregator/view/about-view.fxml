@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane id="about-window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" stylesheets="@../styles/main-style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.tekisho.elconsumptionaggregator.controller.ModalController">
+   <top>
+      <Label id="descriptionLabel" fx:id="descriptionLabel" text="Description" textAlignment="JUSTIFY" wrapText="true" BorderPane.alignment="TOP_LEFT" />
+   </top>
+   <bottom>
+      <Label id="versionLabel" fx:id="versionLabel" text="Version" BorderPane.alignment="BOTTOM_LEFT" />
+   </bottom>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</BorderPane>

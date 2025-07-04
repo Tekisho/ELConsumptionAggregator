@@ -1,0 +1,19 @@
+WINDOWS
+jpackage `
+  --type msi `
+  --input jpackage/input `
+  --name ELConsumptionAggregator `
+  --description "A lightweight JavaFX utility for parsing & processing specific format Excel files (.xls/.xlsx)" `
+  --main-jar elconsumptionaggregator-1.0.1.jar `
+  --main-class io.github.tekisho.elconsumptionaggregator.ELConsumptionAggregator `
+  --icon jpackage/resources/external-app-icon.ico `
+  --java-options "-DLOG_DIR=./logs" `
+  --dest jpackage/output `
+  --runtime-image jpackage/runtime `
+  --copyright "© 2025 Tekisho" `
+  --license-file jpackage/resources/LICENSE.txt `
+  --win-shortcut `
+  --win-menu `
+  --win-dir-chooser `
+  --app-version 1.0.1 `
+  --vendor "Tekisho"

@@ -36,7 +36,7 @@ public final class ViewConfig {
 
     public enum ResourcePath {
         STYLES("styles/main-style.css"),
-        APP_ICON("images/app-icon.png"),
+        APP_ICON("images/internal-app-icon.png"),
         HELP_ICON("images/about-icon.png");
 
         private final String path;

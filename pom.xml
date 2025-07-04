@@ -5,7 +5,7 @@
 
     <groupId>io.github.tekisho</groupId>
     <artifactId>ELConsumptionAggregator</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>ELConsumptionAggregator</name>
@@ -38,6 +38,7 @@
         <properties.maven.plugin.version>1.2.1</properties.maven.plugin.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
 
+        <application.author>Teki Shodo</application.author>
         <application.version>${project.version}</application.version>
         <application.name>${project.name}</application.name>
         <application.description>${project.description}</application.description>
@@ -136,14 +137,34 @@
                             <mainClass>io.github.tekisho.elconsumptionaggregator.ELConsumptionAggregator</mainClass>
                         </manifest>
                         <manifestEntries>
-                            <App-Version>${project.version}</App-Version>
-                            <App-Description>${project.description}</App-Description>
+                            <App-Author>${application.author}></App-Author>
+                            <App-Name>${application.name}</App-Name>
+                            <App-Version>${application.version}</App-Version>
+                            <App-Description>${application.description}</App-Description>
                         </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
 
-            <!-- Maven Shade (for fat-jar) Pluign -->
+            <!-- Properties Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>${properties.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>write-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>${project.build.outputDirectory}/app.properties</outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven Shade (for fat-jar) Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -161,24 +182,6 @@
                                     <mainClass>io.github.tekisho.elconsumptionaggregator.ELConsumptionAggregator</mainClass>
                                 </transformer>
                             </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- Properties Plugin -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>properties-maven-plugin</artifactId>
-                <version>${properties.maven.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>write-project-properties</goal>
-                        </goals>
-                        <configuration>
-                            <outputFile>${project.build.outputDirectory}/app.properties</outputFile>
                         </configuration>
                     </execution>
                 </executions>
